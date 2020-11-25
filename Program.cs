@@ -1,0 +1,29 @@
+﻿using System;
+using WasmWrangler;
+
+namespace WasmWrangler.Template
+{
+    public class Program
+    {
+        private static int _clickCount = 0;
+
+        public static void Main()
+        {
+            Console.WriteLine("Hello World from WASM!");
+
+            var loading = JS.document.getElementById("loading");
+            loading!.style.SetObjectProperty("display", "none");
+
+            var app = JS.document.getElementById("app");
+            app!.style.SetObjectProperty("display", "block");
+        }
+
+        public static void IncrementClickCount()
+        {
+            _clickCount++;
+
+            var button = JS.document.getElementById("button");
+            button!.innerText = $"Clicked {_clickCount} times.";
+        }
+    }
+}

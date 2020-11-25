@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    
+    <!-- Mono Wasm SDK packager.exe doesn't seem to like relative paths -->
+    <BinDirectory>./bin</BinDirectory>
+    <OutputPath>$([System.IO.Path]::GetFullPath('$(BinDirectory)'))/$(Configuration)</OutputPath>
+
+    <!-- Mono Wasm SDK packager.exe will need all DLLs to be available -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WasmWrangler" Version="0.0.1" />
+
+    <!-- Show the ci.yml is Visual Studio -->
+    <None Include=".github\workflows\ci.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="css\app.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="js\WasmWrangler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

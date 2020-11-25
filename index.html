@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en-us">
+<head>
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <div id="loading">
+        <h1>Please wait while the application is loaded...</h1>
+    </div>
+
+    <div id="app" style="display:none;">
+        <h1>Please look in the console of the broswer in order to see the output.</h1>
+        <button id="button" onclick="Wasm.callStaticMethod('WasmWrangler.Template', 'WasmWrangler.Template.Program', 'IncrementClickCount');">Click me!</button>
+    </div>
+
+    <!-- You need to include WasmWrangler.js first -->
+    <script type="text/javascript" src="js/WasmWrangler.js"></script>
+
+    <!-- wasm.boostrapper.js will call the Main() from .NET -->
+    <script type="text/javascript" src="wasm.bootstrapper.js"></script>
+</body>
+</html>
