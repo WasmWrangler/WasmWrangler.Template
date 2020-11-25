@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WasmWrangler" Version="0.0.1" />
+    <PackageReference Include="WasmWrangler" Version="0.0.2" />
 
     <!-- Show the ci.yml is Visual Studio -->
     <None Include=".github\workflows\ci.yml" />
