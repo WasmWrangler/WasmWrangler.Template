@@ -15,5 +15,8 @@ jobs:
       with:
         dotnet-version: '5.0.x'
 
+    - name: Restore
+      run: dotnet restore WasmWrangler.Template.csproj -nologo
+
     - name: Build
       run: dotnet build WasmWrangler.Template.csproj -c Release -nologo
