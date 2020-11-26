@@ -1,4 +1,7 @@
-﻿# WasmWrangler Template
+﻿[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/WasmWrangler/WasmWrangler.Template/workflows/CI/badge.svg)](https://github.com/WasmWrangler/WasmWrangler.Template/actions)
+
+# WasmWrangler Template
 
 A template project for getting started with WasmWrangler.
 
